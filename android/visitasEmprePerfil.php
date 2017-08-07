@@ -1,0 +1,13 @@
+<?php
+    require "../lib/conexion.php";
+    include "../lib/Llenado_Select.php";
+    $w=new Llenado_Select();
+
+    $nombreUser = $_GET['cod'];
+    $sql="select nomb_user, img_perfil,num_visitas, fecha from contadorempre join usuarios_empleo on 
+    contadorempre.cod_visitante = usuarios_empleo.cod_empleo where contadorempre.cod_perfil = (select cod_usuario 
+    from usuarios_empre where nomb_usuario='$nombreUser')";
+    $array=$w->llenarSelect($sql);
+    $json = array("items" => $array);
+    $items=json_encode($json);
+    echo $items;
