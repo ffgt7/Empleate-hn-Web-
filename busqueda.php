@@ -66,7 +66,7 @@ $(document).ready(function(){
 
 		if(!empty($busqueda))
 		{
-			$sql.=" and MATCH(cargoP) AGAINST ('$busqueda' IN BOOLEAN MODE ) ";
+			$sql.=" and MATCH(cargoP) AGAINST ('$busqueda' IN BOOLEAN MODE ) or cargoP like '%$busqueda%'";
 		}
 
 		if(!empty($nombEmpre))
@@ -144,7 +144,7 @@ $(document).ready(function(){
 		$empezar_desde=($pagina-1)*$tamano_paginas;
 		$sql3="select cod_propuesta,nombreP,descripcionP,caducidadP,catego,imagen,nomb_empre from propuesta
 		join categorias on cod_catego=fk_areaP join usuarios_empre on cod_usuario=fk_userEmpre
-		where estado=1 $sql order by caducidadP asc";
+		where vistoP=0 $sql and estado=1 order by caducidadP asc";
 		$resultado=$conexion->prepare($sql3);
 		$resultado->execute(array());
 		$num_filas=$resultado->rowCount();
@@ -159,7 +159,7 @@ $(document).ready(function(){
 		}
 		$sqlf="select cod_propuesta,nombreP,descripcionP,caducidadP,catego,imagen,nomb_empre from propuesta
 		join categorias on cod_catego=fk_areaP join usuarios_empre on cod_usuario=fk_userEmpre
-		where estado=1 $sql order by caducidadP asc LIMIT $empezar_desde,$tamano_paginas";
+		where vistoP=0 $sql and estado=1 order by caducidadP asc LIMIT $empezar_desde,$tamano_paginas";
 		$array_propuestas= $conexion->prepare($sqlf);
 		$array_propuestas->execute(array());
 		$num=$array_propuestas->rowCount();
