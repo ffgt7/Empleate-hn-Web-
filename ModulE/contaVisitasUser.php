@@ -61,8 +61,9 @@ ob_start();
             
             $cod=htmlentities(addslashes($_SESSION["cod_usuario"]));
 
-            $sql="select imagen, nomb_empre, num_visitas, fecha from contadorempre join usuarios_empre on contadorempre.cod_visitante = usuarios_empre.cod_usuario 
-                        where contadorempre.cod_perfil = $cod ";
+            $sql="select imagen, nomb_empre, num_visitas, fecha 
+                  from contadorempre join usuarios_empre on contadorempre.cod_visitante = usuarios_empre.cod_usuario 
+                  where contadorempre.cod_perfil = '$cod'";
 
             $resul= $conexion->prepare($sql);
 
