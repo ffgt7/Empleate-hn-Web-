@@ -87,7 +87,7 @@
 			?>
 						'swal({
 						title: "Error",
-						text: "Ya envió su curriculum en esta propuesta!",
+						text: "¡Ya envió su curriculum en esta propuesta!",
 						type: "error",
 						closeOnConfirm: true,
 						});'
@@ -97,7 +97,7 @@
 					{
 			?>
 						'swal({
-						title: "Desea aplicar a esta propuesta?",
+						title: "¿Desea aplicar a esta propuesta?",
 						text: "Se enviara su curriculum a la empresa!",
 						type: "info",
 						showCancelButton: true,
