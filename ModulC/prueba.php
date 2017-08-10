@@ -13,6 +13,7 @@ ini_set('display_errors', '1');
 <link rel="stylesheet" type="text/css" href="../js/dist/sweetalert.css">
 </head>
 <?php
+	include('../lib/config.php');
   if(!isset($_GET['cod']))
   {
     require("../lib/permisosG.php");
@@ -39,7 +40,7 @@ ini_set('display_errors', '1');
         				type: "error",
 					     },
     					function()
-              {             window.location.replace("http://empleate-hn.accesocatracho.com//index.php");
+              {             window.location.replace("';echo $rutaPrin."index.php";echo'");
     					}
             );
           </script>';
@@ -67,7 +68,7 @@ ini_set('display_errors', '1');
   					type: "error",
 					},
 					function(){
-						window.location.replace("http://empleate-hn.accesocatracho.com//ModulC/curriculum.php");
+						window.location.replace("';echo $rutaPrin."ModulC/curriculum.php";echo'");
 					});
              	</script>';
         return;
