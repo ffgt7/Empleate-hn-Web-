@@ -54,12 +54,12 @@ ini_set('display_errors', '1');
 
     $query2="select Pos_moto,Pos_vehi,sexo,fk_TipoLicen,sum(YEAR(fech_FinTra)-YEAR(fech_IniTra) + IF(DATE_FORMAT(fech_FinTra,'%m-%d') > DATE_FORMAT(fech_IniTra,'%m-%d'), 0, -1)) AS `Experiencia`,
     YEAR(CURDATE())-YEAR(Fech_Naci) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(Fech_Naci,'%m-%d'), 0, -1) as edad, fk_idioma,fk_nivel
-    from usuarios_empleo join curri_expelabo on fk_userExpeLbo=cod_empleo join curri_idioma on fk_userIdioma=cod_empleo where cod_empleo=? group by fk_idioma,fk_nivel asc";
+    from usuarios_empleo left join curri_expelabo on fk_userExpeLbo=cod_empleo left join curri_idioma on fk_userIdioma=cod_empleo where cod_empleo=? group by fk_idioma,fk_nivel asc";
     $result2=$conexion->prepare($query2);
     $result2->execute(array($codUser));
     foreach($results as $elem);
     foreach($result2 as $elem2);
-    if(!isset($elem2))
+    /*if(!isset($elem2))
     {
       echo'<script type="text/javascript">
 					swal({
@@ -73,7 +73,7 @@ ini_set('display_errors', '1');
              	</script>';
         return;
 
-    }
+    }*/
     $requi[]="";
 
 
@@ -81,9 +81,9 @@ ini_set('display_errors', '1');
   {
     $requi[]="Experiencia laboral necesaria de: ".$elem['experien'];
   }
-  elseif($elem2['Experiencia']<=$elem['fk_experienciaP']-1)
+  elseif($elem2['Experiencia']<=$elem['fk_experienciaP']-1 OR $elem2['Experiencia']==NULL)
   {
-    $requi[]="Experiencia laboral necesaria de: ".$elem['experien'];
+    $requi[]="Experiencia laboral necesaria de: ".$elem['experien'];	
   }
 
   if($elem2['edad']<$elem['edad'] or $elem2['edad']>$elem['edad2'])
@@ -125,7 +125,7 @@ ini_set('display_errors', '1');
     $requi[]=" No posee Carro";
   }
 
-  if($elem2['fk_TipoLicen']==1)
+  if($elem2['fk_TipoLicen']==1 and $elem['licenciaP']!="Indiferente")
   {
     $requi[]="No posee Licencia de conducir";
   }

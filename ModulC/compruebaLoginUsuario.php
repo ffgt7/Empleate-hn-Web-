@@ -48,7 +48,6 @@ ob_start();
 			if($contador>0){
 				
 				//echo "<h1>Adelante!!</h1>";
-				session_start();
 				$_SESSION["usuario"]=$_POST["login"];
 
 				if(isset($_POST["recordar"])){

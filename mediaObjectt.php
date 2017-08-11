@@ -95,7 +95,7 @@
 
 	$dia = date('Y/m/d');
 	$empezar_desde=($pagina-1)*$tamano_paginas;
-	$sql3="select cod_propuesta,nombreP,descripcionP,caducidadP,catego,imagen,nomb_empre from propuesta join categorias on
+	$sql3="select DISTINCT cod_propuesta,nombreP,descripcionP,caducidadP,catego,imagen,nomb_empre from propuesta join categorias on
 	cod_catego=fk_areaP join usuarios_empre on cod_usuario=fk_userEmpre where propuesta.estado = 1 AND  propuesta.caducidadP >= '$dia' order by caducidadP asc";
 	$resultado=$conexion->prepare($sql3);
 	$resultado->execute(array());
@@ -113,7 +113,7 @@
 	$resultado=$conexion->prepare($sqlU);
 	$resultado->execute();
 
-	$sql="select cod_propuesta,nombreP,descripcionP,caducidadP,catego,imagen,nomb_empre from propuesta join categorias on
+	$sql="select DISTINCT cod_propuesta,nombreP,descripcionP,caducidadP,catego,imagen,nomb_empre from propuesta join categorias on
 	cod_catego=fk_areaP join usuarios_empre on cod_usuario=fk_userEmpre where propuesta.estado = 1 AND  propuesta.caducidadP >= '$dia' order by caducidadP asc LIMIT $empezar_desde,$tamano_paginas";
     $array_propuestas=$w->llenarSelect($sql);
 	if($num_filas != 0)
