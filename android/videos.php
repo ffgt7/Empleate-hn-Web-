@@ -8,4 +8,5 @@ catevideos on codCateVideo=FKcategoria join admin on codAdmin=FKusuario order by
 	$json = array("items" => $array);
     $items=json_encode($json);
     echo $items;
+
 ?>

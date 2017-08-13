@@ -8,4 +8,5 @@
 	$json = array("items" => $array);
     $items=json_encode($json);
     echo $items;
+
 ?>
