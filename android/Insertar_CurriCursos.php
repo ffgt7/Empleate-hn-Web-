@@ -1,10 +1,10 @@
 <?php
     include("../lib/config.php");
-	if(!isset($_POST['userName']))
+	/*if(!isset($_POST['userName']))
 	{
 		require("../lib/permisosG.php");
 		return;
-	}
+	}*/
 	$nombCurso=$_POST['NombreCurso'];
 	$nombEmpre=$_POST['NombreEmpresa'];
 	$pais=$_POST['pais'];
