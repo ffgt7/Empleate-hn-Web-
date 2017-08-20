@@ -85,12 +85,15 @@
   }
 
 	$requiBase=implode("\n",$requi); 
+	$numArray=count(explode("\n",$requiBase));
 	$user="select cod_empleo from usuarios_empleo where nomb_user=?";
 	$r=$conexion->prepare($user);
 	$r->execute(array($codUser));
 	foreach($r as $n);
 	
-    $insert="insert into enviocurri(fk_propuesta,fk_userDesem,requisitos) values(?,?,?)";
+    $insert="insert into enviocurri(fk_propuesta,fk_userDesem,requisitos,requi_nocumple) values(?,?,?,?)";
     $result=$conexion->prepare($insert);
-    $result->execute(array($codPro,$n['cod_empleo'],$requiBase));
+    $result->execute(array($codPro,$n['cod_empleo'],$requiBase,$numArray));
+	
+	echo $requiBase;
 	
