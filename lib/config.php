@@ -3,6 +3,6 @@
 	$dbRoot='localhost';
 	$dbUser='root'; 
 	$dbPass='efli1995';
-	$rutaPrin="http://192.168.43.64/empleate-hn/";
+	$rutaPrin="http://192.168.0.116/empleate-hn/";
 	
 ?>
