@@ -114,7 +114,7 @@ $respuesta= new stdClass();
 if($email != ""){
 
 	//require("../lib/conexion.php");
-	$conexion=new PDO('mysql:host=localhost; dbname=empleo','root','');
+	$conexion=new PDO('mysql:host=localhost; dbname=accesoca_empleo','root','efli1995');
 
 	$consulta ="SELECT * FROM usuarios_empleo WHERE email_user= '$email' LIMIT 1";
 

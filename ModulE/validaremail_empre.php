@@ -11,9 +11,9 @@ function generarLinkTemporal($idusuario, $nombreUsuario){
    //$token = password_hash($cadena, PASSWORD_DEFAULT);
 	 $token = sha1($cadena);
 
-	//require("../lib/conexion.php");
+	require("../lib/conexion.php");
 
-	$conexion=new PDO('mysql:host=localhost; dbname=empleo','root','');
+	//$conexion=new PDO('mysql:host=localhost; dbname=empleo','root','');
 
    // Se inserta el registro en la tabla
 	 $sql= "INSERT INTO recu_empre(cod_usuario,nomb_user,token) VALUES(?,?,?)";
@@ -113,8 +113,8 @@ $respuesta= new stdClass();
 
 if($email != ""){
 
-	//require("../lib/conexion.php");
-	$conexion=new PDO('mysql:host=localhost; dbname=empleo','root','');
+	require("../lib/conexion.php");
+	//$conexion=new PDO('mysql:host=localhost; dbname=accesoca_empleo','root','efli1995');
 
 	$consulta ="SELECT * FROM usuarios_empre WHERE email= '$email' LIMIT 1";
 
