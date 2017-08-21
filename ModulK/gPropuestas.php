@@ -17,7 +17,12 @@
 		}
 		session_start();
 	
-		$cod=$_SESSION["cod_usuarioE"];
+		if(isset($_POST['cod_android'])){
+			$cod=$_POST['cod_android'];
+		}else {
+			$cod=$_SESSION["cod_usuarioE"];
+		}
+		
 	
 		$nombreP=$_POST["nombre"];
 		$area=$_POST["area"];
@@ -483,13 +488,31 @@ elseif($salario > $salario2)
 	 
  }
  else{
+	 
+	 if(isset($_POST['cod_android'])) {
+		$sql="select cod_usuario from usuarios_empre where nomb_usuario=?";
+		$resul=$conexion->prepare($sql);
+		$resul->execute(array($cod));
+		$row=$resul->fetchAll();
+		foreach($row as $codEmpre);
 		$insert="insert into propuesta(nombreP,tipoP,fk_experienciaP,generoP,edad,salarioP,vehiculoP,licenciaP,departamentoP,caducidadP,
-            		tituloP,descripcionP,vacantesP,fk_areaP,cargoP,edad2,salario2,descripcion2,descripcion3,fk_departamento,fk_municipio,fk_userEmpre,
-            		fk_idioma,fk_nivelIdiom)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            	tituloP,descripcionP,vacantesP,fk_areaP,cargoP,edad2,salario2,descripcion2,descripcion3,fk_departamento,fk_municipio,fk_userEmpre,
+            	fk_idioma,fk_nivelIdiom)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	
+		$result=$conexion->prepare($insert);
+		$result->execute(array($nombreP,$tipo,$experienciaLab,$genero,$edad,$salario,$vehiculo,$licencia,$ubicacion,$caducidad,$titulo,
+	 $descripcion,$vacantes,$area,$cargo,$edad2,$salario2,$descripcion2,$descripcion3,$departamento,$municipio,$codEmpre['0'],$idioma,$nivel));
+		} else {
+			$insert="insert into propuesta(nombreP,tipoP,fk_experienciaP,generoP,edad,salarioP,vehiculoP,licenciaP,departamentoP,caducidadP,
+					tituloP,descripcionP,vacantesP,fk_areaP,cargoP,edad2,salario2,descripcion2,descripcion3,fk_departamento,fk_municipio,fk_userEmpre,
+					fk_idioma,fk_nivelIdiom)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	
 		$result=$conexion->prepare($insert);
 		$result->execute(array($nombreP,$tipo,$experienciaLab,$genero,$edad,$salario,$vehiculo,$licencia,$ubicacion,$caducidad,$titulo,
 		                        $descripcion,$vacantes,$area,$cargo,$edad2,$salario2,$descripcion2,$descripcion3,$departamento,$municipio,$cod,$idioma,$nivel));
+		}
+		
+		
 		
 		if(isset($result)){
 
