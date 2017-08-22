@@ -8,4 +8,4 @@
 	$results->execute(array($email));
 	$num=$results->rowCount();
 	
-	echo "$num";
+	echo $num;

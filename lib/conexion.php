@@ -13,7 +13,3 @@
 			die("Error". $e->GetMessage());
 			
 		}
-			
-		
-		
-?>

@@ -11,12 +11,12 @@ function generarLinkTemporal($idusuario, $nombreUsuario){
    //$token = password_hash($cadena, PASSWORD_DEFAULT);
 	 $token = sha1($cadena);
 
-	require("../lib/conexion.php");
+	//require("../lib/conexion.php");
 
-	//$conexion=new PDO('mysql:host=localhost; dbname=empleo','root','');
+	$conexion=new PDO('mysql:host=localhost; dbname=accesoca_empleo','root','efli1995');
 
    // Se inserta el registro en la tabla
-	 $sql= "INSERT INTO recu_empre(cod_usuario,nomb_user,token) VALUES(?,?,?)";
+    $sql= "INSERT INTO recu_empre(cod_usuario,nomb_user,token) VALUES(?,?,?)";
 
    $resultado = $conexion->prepare($sql);
    $resultado->execute(array($idusuario,$nombreUsuario,$token));
@@ -25,7 +25,7 @@ function generarLinkTemporal($idusuario, $nombreUsuario){
 		 //$passIdUsuario= password_hash($idusuario, PASSWORD_DEFAULT);
 		 $passIdUsuario= sha1($idusuario);
       // Se devuelve el link que se enviara al usuario
-      $enlace = 'http://'.$_SERVER["SERVER_NAME"].'/PruebaEmpleo2/ModulE/restablecer_empre.php?cod_usuario='.$passIdUsuario.'&token='.$token;
+      $enlace = 'http://'.$_SERVER["SERVER_NAME"].'/empleate-hn/ModulE/restablecer_empre.php?cod_usuario='.$passIdUsuario.'&token='.$token;
 
 			//$enlace = 'http://'.$_SERVER["SERVER_NAME"].'/PruebaEmpleo2/ModulE/restablecer.php?cod_usuario='.$passIdUsuario.'&token='.$token;
 
