@@ -26,23 +26,24 @@ $correo = htmlentities(addslashes($_POST['correoE']));
 							$resultado = $conexion->prepare($sql);
 							$resultado->execute(array());
 							if($resultado){
-								$sql = "DELETE FROM recu_empre WHERE token = '$token'" ;
+								$sql = "DELETE FROM recu_empre WHERE cod_usuario = '$cod_empre'" ;
 								$resultado=$conexion->prepare($sql);
 								$resultado->execute(array());
 								
-								$num = 2; // La contraseña se actualizó con exito."
+								$num = $num+2; // La contraseña se actualizó con exito."
                                 
 							}else{
 							
-                                $num = 3; // Ocurrió un error al actualizar la contraseña, intentelo más tarde."
+                                $num = $num+3; // Ocurrió un error al actualizar la contraseña, intentelo más tarde."
 							}
 						}else{
-                            $num = 4; //Las contraseñas no coinciden."
+                            $num = $num+4; //Las contraseñas no coinciden."
 						}
 					}else {
-                        $num = 5; // El codigo de usuario no es válido."
+                        $num = $num+5; // El codigo de usuario no es válido."
 					}
 				}else{
-                    echo $num;
+                    $num = $num+6;
                     //$num = 5; //El token no es válido."
 				}
+				echo $num;
