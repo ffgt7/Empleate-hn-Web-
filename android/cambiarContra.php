@@ -30,20 +30,20 @@ $correo = htmlentities(addslashes($_POST['correoE']));
 								$resultado=$conexion->prepare($sql);
 								$resultado->execute(array());
 								
-								$num = $num+2; // La contraseña se actualizó con exito."
+								$num = $num+1; // La contraseña se actualizó con exito."
                                 
 							}else{
 							
-                                $num = $num+3; // Ocurrió un error al actualizar la contraseña, intentelo más tarde."
+                                $num = $num+2; // Ocurrió un error al actualizar la contraseña, intentelo más tarde."
 							}
 						}else{
-                            $num = $num+4; //Las contraseñas no coinciden."
+                            $num = $num+3; //Las contraseñas no coinciden."
 						}
 					}else {
-                        $num = $num+5; // El codigo de usuario no es válido."
+                        $num = $num+4; // El codigo de usuario no es válido."
 					}
 				}else{
-                    $num = $num+6;
+                    $num = $num+5;
                     //$num = 5; //El token no es válido."
 				}
 				echo $num;
