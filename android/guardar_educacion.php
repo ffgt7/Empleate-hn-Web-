@@ -28,7 +28,7 @@
 		$n=$resultado->fetch(PDO::FETCH_ASSOC);
 		$User= $n['cod_empleo'];
 
-		$insert="insert into educacion(primaria, primariI, primariaF,secundaria,fsecundariaI,secundariaF,superior,superiorI,superiorF,tituloObtenidoS,carrera,tituloObtenidoSecu,fk_userEdu)
+		$insert="insert into educacion(primaria, primariI, primariaF,secundaria,secundariaI,secundariaF,superior,superiorI,superiorF,tituloObtenidoS,carrera,tituloObtenidoSecu,fk_userEdu)
 		values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		$result=$conexion->prepare($insert);
-		$result->execute(array($primaria,$primari_i,$primaria_f,$secundaria,$secundaria_i,$secundaria_f,$secundaria_t,$carrera,$superior,$superior_i,$superior_f,$superior_f,$User));
+		$result->execute(array($primaria,$primaria_i,$primaria_f,$secundaria,$secundaria_i,$secundaria_f,$secundaria_t,$superior_i,$superior_f,$superior_t,$carrera,$superior_t,$User));
