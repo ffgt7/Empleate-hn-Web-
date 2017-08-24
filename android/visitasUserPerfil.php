@@ -1,5 +1,5 @@
 <?php
-    require "../lib/conexion.php";
+    include "../lib/conexion.php";
     include "../lib/Llenado_Select.php";
     $w=new Llenado_Select();
 
