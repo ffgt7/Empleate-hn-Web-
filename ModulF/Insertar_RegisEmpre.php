@@ -32,7 +32,7 @@
 	if(isset($tamImg) and $tamImg!=""){
 		if($tamImg<=4000000 and $tamImg>=1){
 			if($tipoImg=="image/jpg" || $tipoImg=="image/jpeg" || $tipoImg=="image/png" || $tipoImg=="image/gif"){
-			$ruta=$_SERVER['DOCUMENT_ROOT'].'/Imagenes_Empre/';
+			$ruta=$_SERVER['DOCUMENT_ROOT'].'/Empleate-hn-Web-/Imagenes_Empre/';
 			$nombre=uniqid().$nombreImg;
 			move_uploaded_file($_FILES['imagen']['tmp_name'],$ruta.$nombre);
 		}
@@ -83,7 +83,7 @@
     {
         $imagen=$_POST['foto'];
         $nombre=uniqid()."."."png";
-        $ruta=$_SERVER['DOCUMENT_ROOT'].'/Imagenes_Empre/';
+        $ruta=$_SERVER['DOCUMENT_ROOT'].'/Empleate-hn-Web-/Imagenes_Empre/';
 	    $path = "$ruta$nombre";
 	   file_put_contents($path,base64_decode($imagen));
     }
