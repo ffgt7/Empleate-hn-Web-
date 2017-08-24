@@ -28,4 +28,4 @@
 		$insert="insert into curri_expelabo(Nomb_Empre,fk_pais,	fk_actividad,nomb_EscriPuesto,fk_categ,	fk_puesto,descrip_Funcio,fech_IniTra,fech_FinTra,fk_userExpeLbo)
 		values(?,?,?,?,?,?,?,?,?,?)";
 		$result=$conexion->prepare($insert);
-		$result->execute(array($nombre,$pais,$actividad,$cargo,$secundaria_i,$categoria,$puesto,$descripcion,$inicio,$fin,$User));
+		$result->execute(array($empresa,$pais,$actividad,$cargo,$categoria,$puesto,$descripcion,$inicio,$fin,$User));
