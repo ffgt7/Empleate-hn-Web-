@@ -1,4 +1,7 @@
-<link id="theme-style" rel="stylesheet" href="../css/styles-6.css"> 
+<?php
+ob_start();
+?>
+<link id="theme-style" rel="stylesheet" href="../css/styles-6.css">
 <script type="text/javascript" src="../js/main.js"></script>  
 <link rel="stylesheet" href="../css/w3.css">
 <script src="../js/sweetalert-dev.js"></script>
@@ -646,4 +649,5 @@
 			</div>
 		</div><?php
 	require("../footer.php");
+    ob_end_flush();
 ?>

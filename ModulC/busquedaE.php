@@ -58,7 +58,7 @@ $(document).ready(function()
 
     if($busqueda!="")
 	{
-		$sql.=" and MATCH(tituloObtenidoS, tituloObtenidoSecu) AGAINST ( '$busqueda' IN BOOLEAN MODE  ) ";
+		$sql.=" and MATCH(tituloObtenidoS, tituloObtenidoSecu) AGAINST ( '$busqueda' IN BOOLEAN MODE  ) or tituloObtenidoS like '%$busqueda%' or tituloObtenidoSecu like '%$busqueda%' ";
 
 	}
 

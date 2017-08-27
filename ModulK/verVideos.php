@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -248,3 +251,6 @@ if($num_filas != 0)
 ?>
 </body>
 </html>
+<?php
+ob_end_flush();
+?>
