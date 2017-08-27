@@ -6,17 +6,17 @@
 		return;
 	}
 	$primaria=$_POST['primaria'];
-	$primaria_i=$_POST['primaria_inicio'];
-	$primaria_f=$_POST['primaria_fin'];
+	$primariaI=$_POST['primaria_inicio'];
+	$primariaF=$_POST['primaria_fin'];
 	$secundaria=$_POST['secundaria'];
-	$secundaria_i=$_POST['secundaria_inicio'];
-	$secundaria_f=$_POST['secundaria_fin'];
-	$secundaria_t=$_POST['secundaria_titulo'];
-	$carrera=$_POST['carrera'];
+	$secundariaI=$_POST['secundaria_inicio'];
+	$secundariaF=$_POST['secundaria_fin'];
 	$superior=$_POST['superior'];
-	$superior_i=$_POST['superior_inicio'];
-	$superior_f=$_POST['superior_fin'];
-	$superior_t=$_POST['superior_titulo'];
+	$superiorI=$_POST['superior_inicio'];
+	$superiorF=$_POST['superior_fin'];
+	$tituloSuperior=$_POST['secundaria_titulo'];
+	$carrera=$_POST['carrera'];
+	$tituloMedia=$_POST['superior_titulo'];
 	
 
 		include("../lib/conexion.php");
@@ -28,7 +28,9 @@
 		$n=$resultado->fetch(PDO::FETCH_ASSOC);
 		$User= $n['cod_empleo'];
 
-		$insert="insert into educacion(primaria, primariI, primariaF,secundaria,secundariaI,secundariaF,superior,superiorI,superiorF,tituloObtenidoS,carrera,tituloObtenidoSecu,fk_userEdu)
-		values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		$result=$conexion->prepare($insert);
-		$result->execute(array($primaria,$primaria_i,$primaria_f,$secundaria,$secundaria_i,$secundaria_f,$secundaria_t,$superior_i,$superior_f,$superior_t,$carrera,$superior_t,$User));
+        $insert="insert into educacion(primaria,primariI,primariaF,secundaria,secundariaI,secundariaF,superior,superiorI,
+                 superiorF,tituloObtenidoS,carrera,tituloObtenidoSecu,fk_userEdu)values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+        $result=$conexion->prepare($insert);
+        $result->execute(array($primaria,$primariaI,$primariaF,$secundaria,$secundariaI,$secundariaF,$superior,$superiorI,
+                        $superiorF,$tituloSuperior,$carrera,$tituloMedia,$User));
