@@ -160,7 +160,7 @@ if($num_filas != 0)
 					<?php } 
 							if($total_paginas > $pagina)
 							{ ?>
-								<li class="next"><a class="" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">Siguiente &raquo;</a></li><?php
+								<li class="next"><a class="" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">&raquo;</a></li><?php
 							}
 							else
 							{ ?>		
@@ -171,7 +171,7 @@ if($num_filas != 0)
 						else
 						{ 
 						?>
-							<li class="previous"><a class="" href="?pagina=<?php echo $prevpage ?>" style="font-size:15px">&laquo; Anterior</a></li><?php
+							<li class="previous"><a class="" href="?pagina=<?php echo $prevpage ?>" style="font-size:15px">&laquo;</a></li><?php
 							for($i=$spmin; $i<=$spmax; $i++)
 							{
 								if($pagina == $i)
@@ -185,7 +185,7 @@ if($num_filas != 0)
 							}
 						 	if($total_paginas > $pagina)
 							{ ?>
-								<li class="next"><a class="" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">Siguiente &raquo;</a></li><?php
+								<li class="next"><a class="" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">&raquo;</a></li><?php
 							}
 						 	else
 							{

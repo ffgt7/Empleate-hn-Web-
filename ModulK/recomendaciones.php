@@ -180,15 +180,15 @@ ob_start();
 							{
 								if($i < 8)
 								{ ?>
-								<li><a class="text" href="?pagina=<?php echo $i ?>" style="font-size:15px"><?php echo $i ?></a></li><?php
+								<li><a class="textt" href="?pagina=<?php echo $i ?>" style="font-size:15px"><?php echo $i ?></a></li><?php
 								}
 							}
 					?>
 					<?php } 
 							if($total_paginas > $pagina)
 							{ ?>
-								<li class="next"><a class="text" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">&raquo;</a></li>
-								<li class="next"><a class="text" href="?pagina=<?php echo $total_paginas ?>" style="font-size:15px">&raquo;&raquo;</a></li><?php
+								<li class="next"><a class="textt" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">&raquo;</a></li>
+								<li class="next"><a class="textt" href="?pagina=<?php echo $total_paginas ?>" style="font-size:15px">&raquo;&raquo;</a></li><?php
 							}
 							else
 							{ ?>		
@@ -199,8 +199,8 @@ ob_start();
 						else
 						{ 
 						?>
-							<li class="previous"><a class="text" href="?pagina=1" style="font-size:15px">&laquo;&laquo;</a></li>
-							<li class="previous"><a class="text" href="?pagina=<?php echo $prevpage ?>" style="font-size:15px">&laquo;</a></li><?php
+							<li class="previous"><a class="textt" href="?pagina=1" style="font-size:15px">&laquo;&laquo;</a></li>
+							<li class="previous"><a class="textt" href="?pagina=<?php echo $prevpage ?>" style="font-size:15px">&laquo;</a></li><?php
 							for($i=$spmin; $i<=$spmax; $i++)
 							{
 								if($pagina == $i)
@@ -209,13 +209,13 @@ ob_start();
 								}
 								else
 								{
-							?>		<li><a class="text" href="?pagina=<?php echo $i ?>" style="font-size:15px"><?php echo $i ?></a></li><?php
+							?>		<li><a class="textt" href="?pagina=<?php echo $i ?>" style="font-size:15px"><?php echo $i ?></a></li><?php
 								}
 							}
 						 	if($total_paginas > $pagina)
 							{ ?>
-								<li class="next"><a class="text" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">&raquo;</a></li>
-								<li class="next"><a class="text" href="?pagina=<?php echo $total_paginas ?>" style="font-size:15px">&raquo;&raquo;</a></li><?php
+								<li class="next"><a class="textt" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">&raquo;</a></li>
+								<li class="next"><a class="textt" href="?pagina=<?php echo $total_paginas ?>" style="font-size:15px">&raquo;&raquo;</a></li><?php
 							}
 						 	else
 							{

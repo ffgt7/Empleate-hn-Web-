@@ -26,7 +26,7 @@ $w=new Llenado_Select(); ?>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="../index.php" ><i class="fa fa-home"></i></a>
+            <a class="navbar-brand" href="../index.php">EMPLEATEHN</a>
 		</div>
 		<div class="navbar-collapse collapse">
 	

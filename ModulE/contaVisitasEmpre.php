@@ -65,11 +65,19 @@ ob_start();
                 </script>';
         return;
     }
-	
-	$empezar_desde=($pagina-1)*$tamano_paginas;
-	
 
     $cod=htmlentities(addslashes($_SESSION["cod_usuarioE"]));
+
+	$empezar_desde=($pagina-1)*$tamano_paginas;
+    $sql3="select nomb_user, img_perfil,num_visitas, fecha 
+          from contadorempre join usuarios_empleo on contadorempre.cod_visitante = usuarios_empleo.cod_empleo 
+          where contadorempre.cod_perfil = $cod";
+    $resultado=$conexion->prepare($sql3);
+    $resultado->execute(array());
+    $num_filas=$resultado->rowCount();
+	
+
+
 
     $sql="select nomb_user, img_perfil,num_visitas, fecha 
           from contadorempre join usuarios_empleo on contadorempre.cod_visitante = usuarios_empleo.cod_empleo 

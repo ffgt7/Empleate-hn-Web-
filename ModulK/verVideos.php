@@ -144,7 +144,7 @@ if($num_filas != 0)
 						$spmax = ($pagina < ($total_paginas - $paginate_max)) ? ($pagina + $paginate_max) : $total_paginas;
 				?><ul id="pagination-digg"><?php
 						if($pagina == 1)
-						{ 
+						{
 						 ?>
 						<!--	<li class="previous-off"><a style="font-size:15px">&laquo; Anterior</a></li> -->
 							<li class="active"><a style="font-size:15px">1</a></li>
@@ -162,7 +162,7 @@ if($num_filas != 0)
 					<?php } 
 							if($total_paginas > $pagina)
 							{ ?>
-								<li class="next"><a class="" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">Siguiente &raquo;</a></li><?php
+								<li class="next"><a class="" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">&raquo;</a></li><?php
 							}
 							else
 							{ ?>		
@@ -173,7 +173,7 @@ if($num_filas != 0)
 						else
 						{ 
 						?>
-							<li class="previous"><a class="" href="?pagina=<?php echo $prevpage ?>" style="font-size:15px">&laquo; Anterior</a></li><?php
+							<li class="previous"><a class="" href="?pagina=<?php echo $prevpage ?>" style="font-size:15px">&laquo;</a></li><?php
 							for($i=$spmin; $i<=$spmax; $i++)
 							{
 								if($pagina == $i)
@@ -187,7 +187,7 @@ if($num_filas != 0)
 							}
 						 	if($total_paginas > $pagina)
 							{ ?>
-								<li class="next"><a class="" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">Siguiente &raquo;</a></li><?php
+								<li class="next"><a class="" href="?pagina=<?php echo $nextpage ?>" style="font-size:15px">&raquo;</a></li><?php
 							}
 						 	else
 							{
