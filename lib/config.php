@@ -3,4 +3,4 @@
 	$dbRoot='localhost';
 	$dbUser='root'; 
 	$dbPass='efli1995';
-	$rutaPrin=$_SERVER;
+	$rutaPrin=$_SERVER['SERVER_NAME'];

@@ -47,8 +47,8 @@ if($password1 != "" && $password2 != "" && $idusuario != "" && $token != ""){
 				<div class="col-md-2"></div>
 				<div class="col-md-8" style="padding-top: 20px">
 	<?php
-
-				$conexion= new PDO('mysql:host=localhost; dbname=empleo','root','');
+                require("../lib/conexion.php");
+				//$conexion= new PDO('mysql:host=localhost; dbname=empleo','root','');
 
 				$sql = " SELECT * FROM recu_empleo WHERE token = :token ";
 				$resultado = $conexion->prepare($sql);
