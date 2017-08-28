@@ -17,52 +17,19 @@
 </style>
 
 <style>
-/* styles for '...' */
+
 #descripcion{
-  /* hide text if it more than N lines  */
-  height: 3.6em;
-
-  overflow: hidden;
-
-  /* for set '...' in absolute position */
-  position: relative;
-  /* use this value to count block height */
-  line-height: 1.2em;
-  max-height = line-height (1.2) * lines max number (3) 
-
-  /* fix problem when last visible word doesn't adjoin right side  */
-  text-align: justify;
-  /* place for '...' */
-  margin-right: -1em;
-  padding-right: 1em;
-}
-/* create the ... */
-#descripcion:before {
-  /* points in the end */
-  content: '...';
-
-	text-overflow: ellipsis;
-
-  /* absolute position */
-  position: absolute;
-  /* set position to right bottom corner of block */
-  right: 0;
-  bottom: 0;
-}
-/* hide ... if we have text, which is less than or equal to max lines */
-#descripcion:after {
-  /* points in the end */
-  content: '';
-  /* absolute position */
-  position: absolute;
-  /* set position to right bottom corner of text */
-  right: 0;
-  /* set width and height */
-  width: 1em;
-  height: 1em;
-  margin-top: 0.2em;
-  /*bg color = bg color under block */
-  /*background: white;*/
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    height: 4em;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #nomb_empre,#catego{
@@ -183,7 +150,7 @@
 									<p style="margin-bottom: 0px;" data-toggle="tooltip" data-placement="left" title="Descripción del cargo solicitado" id="descripcion">
 										<?php echo $elemento["descripcionP"] ?>
 									</p>
-									<a href='ModulC/verPropuesta.php?cod=<?php echo $elemento['cod_propuesta']?>'>Seguir leyendo</a>
+									<a style="color: #00b8d4" href='ModulC/verPropuesta.php?cod=<?php echo $elemento['cod_propuesta']?>'>Seguir leyendo</a>
 								</div>
 
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top:10px; position:static; padding-left:0px;">
