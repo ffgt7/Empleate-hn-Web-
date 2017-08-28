@@ -13,4 +13,4 @@
 	$rows=$res->llenarSelect($sql);
     $json = array("items" => $rows);
     $items=json_encode($json);
-    echo $items;.0
+    echo $items;
