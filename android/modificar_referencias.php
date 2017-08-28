@@ -4,9 +4,9 @@
 	$res=new Llenado_Select();
 	
 	$nom_user = $_GET['cod'];
-	$cod_curri= $_GET['cod_curriHabi'];
+	$cod_curri= $_GET['cod_referencai'];
 	
-	$sql=" select nombreR,apellidoR,	identidadR,direccionR,	telFR,	telMR,correoR,correolR2
+	$sql=" select nombreR,apellidoR,identidadR,direccionR,telFR,telMR,correoR,correolR2
 	FROM referencia
 	WHERE 	fk_userRefe=(SELECT cod_empleo FROM usuarios_empleo WHERE nomb_user ='$nom_user') and cod_referencai=$cod_curri";
 	

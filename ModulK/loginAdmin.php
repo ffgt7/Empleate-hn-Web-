@@ -29,7 +29,7 @@
 
 <body>
 <?php
-	require"../ModulC/na.php";
+	require"na.php";
 ?>
 	<div class="jumbotron">
 		<div class="container">

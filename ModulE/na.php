@@ -18,7 +18,7 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#home">ASESORIA</a></li>
+				<li><a href="../ModulK/verArticulos.php">ASESORIA</a></li>
 				<li><a href="../ModulC/empresas.php">EMPRESAS</a></li>
 				<li><a href="../ModulC/quienesSomos.php">QUIENES SOMOS</a></li>
 				<li class="dropdown">
@@ -33,6 +33,7 @@
 					<ul class="dropdown-menu">
 					<li><a class="list-group-item-info" href="formulario.php">EMPRESA</a></li>
 					<li><a class="list-group-item-info" href="../ModulC/loginUsuario.php">USUARIO</a></li>
+                    <li><a class="list-group-item-info" href="../ModulK/loginAdmin.php">ADMINISTRADOR</a></li>
 					</ul>
 				</li>
 			</ul>

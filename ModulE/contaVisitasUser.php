@@ -47,6 +47,7 @@ ob_start();
             $host=$_SERVER["HTTP_HOST"];
             $url=$_SERVER["REQUEST_URI"];
             $dire="http://" . $host . $url;
+
             if(!isset($_SESSION["cod_usuario"]))
             {
                 echo '<script>
@@ -57,6 +58,12 @@ ob_start();
             
             
             $empezar_desde=($pagina-1)*$tamano_paginas;
+        $sql3="select imagen, nomb_empre, num_visitas, fecha 
+                  from contadorempre join usuarios_empre on contadorempre.cod_visitante = usuarios_empre.cod_usuario 
+                  where contadorempre.cod_perfil = '$cod'";
+        $resultado=$conexion->prepare($sql3);
+        $resultado->execute(array());
+        $num_filas=$resultado->rowCount();
             
             
             $cod=htmlentities(addslashes($_SESSION["cod_usuario"]));
